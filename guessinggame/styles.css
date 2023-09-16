@@ -1,0 +1,32 @@
+body{
+    background-color: #333232;
+}
+
+h2 {
+    color: #FFF;
+    text-align: center;
+}
+
+#container {
+    background-color: #0f2431;
+    border: 5px solid #F5E4C3;
+    height: 235px; 
+    width: 750px;
+    margin: auto;
+    text-align: center;
+
+}
+
+p {
+    color: #fff;
+    font-size: 24px;
+}
+
+#input {
+    width: 100pc;
+    margin: 25px auto;
+}
+
+#btn {
+    margin: 25px auto auto 5px;
+}
