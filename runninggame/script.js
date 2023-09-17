@@ -1,5 +1,9 @@
 var titleScreen = document.getElementById("title-screen");
 var gameContainer = document.getElementById("game");
+var character = document.getElementById("character");
+var block = document.getElementById("block");
+const scoreDisplay = document.getElementById("score-value");
+let score = 0;
 
 function startGame() {
     titleScreen.style.display = "none"; // Hide the title screen
@@ -10,9 +14,6 @@ titleScreen.addEventListener('click', startGame);
 document.addEventListener('keydown', function(event) { 
         startGame();
 });
-
-var character = document.getElementById("character");
-var block = document.getElementById("block");
 
 function jump() {
     if (character.classList != "animate"){
@@ -33,8 +34,15 @@ var checkDead = setInterval(function(){
         block.style.display = "none";
         alert("You lost.");
         location.reload(); 
+    } else if (blockLeft <= -20) {
+            updateScore();
     }
 },10)
+
+function updateScore() {
+    score ++;
+    scoreDisplay.innerText = score; 
+}
 
 document.addEventListener('keydown', function(event) {
     jump();
