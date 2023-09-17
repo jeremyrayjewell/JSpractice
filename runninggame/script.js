@@ -1,3 +1,16 @@
+var titleScreen = document.getElementById("title-screen");
+var gameContainer = document.getElementById("game");
+
+function startGame() {
+    titleScreen.style.display = "none"; // Hide the title screen
+    gameContainer.style.display = "block";
+}
+
+titleScreen.addEventListener('click', startGame);
+document.addEventListener('keydown', function(event) { 
+        startGame();
+});
+
 var character = document.getElementById("character");
 var block = document.getElementById("block");
 
@@ -25,4 +38,4 @@ var checkDead = setInterval(function(){
 
 document.addEventListener('keydown', function(event) {
     jump();
-  });
+});
