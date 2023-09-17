@@ -1,0 +1,71 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#game {
+    width: 500px;
+    height: 200px;
+    border: 1px solid black;
+}
+
+#character{
+    width: 20px;
+    height: 50px;
+    background-color: red; 
+    position: relative;
+    top: 150px;
+    margin-left: 20px;
+}
+
+.animate{
+    animation: jump 500ms;
+}
+
+#character-img{
+    width:20px;
+    height:50px;
+    animation: alternateImages 125ms infinite;
+}
+
+@keyframes alternateImages {
+   0%, 100% {
+        background-image: url('man1.png');
+    }
+    50% {
+        background-image: url('man2.png');
+    }
+}
+
+#character-img.alternating-bg {
+    background-image: url('man1.png');
+  }
+
+@keyframes jump{
+    0%{top: 150px;}
+    30%{top: 100px;}
+    70%{top: 100px;}
+    100%{top: 150px;}
+}
+
+#block{
+    width: 20px;
+    height: 20px;
+    background-color: blue;
+    position: relative;
+    top: 130px;
+    left: 480px;
+    animation: block 1s infinite linear;
+}
+
+@keyframes block{
+    0%{left:480px;}
+    100%{left:-40px;}
+}
