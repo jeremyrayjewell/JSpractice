@@ -1,0 +1,104 @@
+body, h1, p, form {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Verdana', sans-serif;
+    background-color: #ffcc00;
+    text-align: center;
+    color: #000;
+  }
+  
+  #title {
+    font-size: 3rem;
+    color: #ff3366;
+    margin-top: 20px;
+    text-transform: uppercase;
+  }
+  
+  #description {
+    font-size: 1.5rem;
+    color: #ff3366;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  
+  #survey-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #ff3366;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 2px solid #ff3366;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #fff8dc;
+    color: #ff3366;
+    font-family: 'Comic Sans MS', cursive;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  
+  #radio-label {
+    margin-top: 15px;
+    color: #ff3366;
+  }
+  
+  input[type="radio"] {
+    display: inline-block;
+    margin-right: 5px;
+  }
+  
+  #checkbox {
+    margin-top: 10px;
+    color: #ff3366;
+  }
+  
+  input[type="checkbox"] {
+    display: inline-block; 
+    margin-right: 5px;
+  }
+  
+  #submit {
+    background-color: #ff3366;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Comic Sans MS', cursive;
+  }
+  
+  #submit:hover {
+    background-color: #ff0055;
+  }
+  
+  @media (max-width: 768px) {
+    #survey-form {
+      max-width: 90%;
+    }
+  }
+  
+  
