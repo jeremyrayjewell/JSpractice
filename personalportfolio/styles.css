@@ -1,0 +1,13 @@
+#welcome-section{
+    height: 100vh;
+}
+
+#navbar{
+    position: fixed;
+}
+
+@media screen and (max-width: 600px) {
+    #header {
+        background-color: #555; 
+        padding: 10px; 
+    }
