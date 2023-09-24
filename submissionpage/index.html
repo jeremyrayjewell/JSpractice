@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Editor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <input type="file" id="imageInput" accept="image/*">
+    <canvas id="canvas" width="500" height="500"></canvas>
+    <button id="cropButton">Crop to 1:1</button>
+    <button id="overlayButton">Overlay Image</button>
+    <input type="text" id="textInput" placeholder="Enter text">
+    <button id="applyTextButton">Apply Text</button>
+    <button id="downloadButton" onclick="downloadImage()">Download</button>
+    
+    <script src="fabric.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
