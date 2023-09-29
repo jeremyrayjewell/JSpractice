@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Iterators</title>
+</head>
+<body>
+    <h1>Iterators</h1>
+    <ul class="summary">
+        <li>let's you iterate over a collection</li>
+        <li>implement your own iterators to define custom behavior</li>
+        <li><strong>iterable</strong> vs. <strong>iterator</strong></li>
+    </ul>
+
+    <p>When is an object iterable? When it provides a means for you to retrieve an iterator for it.</p>
+    <br>
+    <h3>Example:</h3>
+<div id="code-box">
+  
+    <code>
+const numbers = [1, 2, 3];<br>
+const numbersIterator = numbers[Symbol.iterator]();<br>
+<br>
+console.log(numbersIterator.next());<br>
+console.log(numbersIterator.next());<br>
+console.log(numbersIterator.next());<br>
+console.log(numbersIterator.next());<br>
+<br>
+for (const n of numbers){<br>
+   console.log(n);<br>
+}
+    </code><div>
+
+    <script src="script.js"></script>
+</body>
+</html>
