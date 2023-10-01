@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Management</title>
+</head>
+<body>
+    <h1>Team Management</h1>
+
+    <!-- Input fields for adding players -->
+    <input type="text" id="firstName" placeholder="First Name">
+    <input type="text" id="lastName" placeholder="Last Name">
+    <input type="number" id="age" placeholder="Age">
+    <button onclick="addPlayer()">Add Player</button>
+
+    <!-- Input fields for adding games -->
+    <input type="text" id="opponents" placeholder="Opponents">
+    <input type="number" id="teamPoints" placeholder="Team Points">
+    <input type="number" id="opponentPoints" placeholder="Opponent Points">
+    <button onclick="addGame()">Add Game</button>
+
+    <!-- Display player information -->
+    <h2>Players:</h2>
+    <ul id="playerList"></ul>
+
+    <!-- Display game information -->
+    <h2>Games:</h2>
+    <ul id="gameList"></ul>
+
+    <script src="script.js"></script>
+</body>
+</html>
