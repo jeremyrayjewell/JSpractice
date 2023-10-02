@@ -80,3 +80,4 @@ function addGame() {
         alert('Please fill in all game fields correctly.');
     }
 }
+ 
