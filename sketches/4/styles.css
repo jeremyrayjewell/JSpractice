@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap');
 
+*{
+    display: flex;
+    flex-direction: column;
+}
+
 body {
     padding: 20px;
     font-size: 16px;
@@ -23,41 +28,31 @@ header h1 {
     margin: 0;
 }
 
-header img{
+header img {
     height: 40%;
     width: 40%;
 }
 
-#contactForm #hashtagentry,
-#contactForm #mentions,{
-    padding: 20px;
-    border: 1px solid;
-    border-color: #333;
-    border-radius: 25px;
-    background-color: rgba(255, 228, 196, 0.4);
-    display: flex;
-    flex-direction:column;
-    align-items: center;
-    width: 75vh;
-}
-
-#contactForm{
+form {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
+    max-width: 600px;
+    justify-content: center;
 }
 
-#contactForm h2{
-    color:bisque;
+form h2 {
+    color: bisque;
     background-color: #960f0f;
     padding: 6px;
     border-radius: 6px;
+    margin-bottom: 20px;
 }
 
-#contactForm input[type="text"],
-#contactForm textarea,
-#contactForm input[type="file"] {
+form input[type="text"],
+form textarea,
+form input[type="file"] {
     width: 100%;
     padding: 10px;
     margin: 5px 0;
@@ -66,18 +61,18 @@ header img{
 }
 
 form #article,
-form #media{
+form #media {
     text-align: center;
     max-width: 400px;
     margin: 0 auto;
 }
 
-#contactForm h3{
+#contactForm h3 {
     margin-left: 10px;
     color: bisque;
     background-color: #960f0f;
     padding: 6px;
-    border-radius: 60px;
+    border-radius: 6px;
     opacity: 0.6;
 }
 
@@ -104,7 +99,7 @@ form #media{
     font-family: Arial, sans-serif;
     background-color: white;
     margin-top: 10px;
-    width: 100vh;
-    display: block;
+    width: 100%;
+    max-width: 800px; /* Adjust the max-width as needed */
     margin: 0 auto;
 }
