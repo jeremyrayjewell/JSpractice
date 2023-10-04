@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Submission</title>
+</head>
+<body>
+    <header>
+        <h1>Submission Portal</h1>
+        <img src="logo.png">
+    </header>
+    <form id="contactForm">
+            <h2>Your Name</h2>
+            <label for="name">*Author's Name:</label>
+            <input type="text" placeholder="ex. Arty McCritic" id="name" name="name" required><br><br>
+            <h2>Social Media</h2>
+            <p>Remember: This is the ONLY WAY that your work and the AF can find the audience they deserve these days. Take the time to research these, as you know your topics better than anyone else (don't you?).</p>
+        <div id="hashtagentry">
+            <h3>#</h3>
+            <label for="hashtags">Hashtags (25 max):</label><br>
+            <input type="text" placeholder="ex. #yoyopuppetry, #currentcausesdefineme, etc." id="hashtags" name="hashtags"><br><br> <!-- Removed 'optional' -->
+        </div>
+        <br>
+        <div id="mentions">
+            <h3>@</h3>
+            <label for="mentions">Mentions/Usernames (10 per platform max):</label><br> 
+            <label for="text">Facebook:</label>
+            <input type="text" placeholder="ex. @theartsfuse" id="facebook" name="facebook"><br>
+            <label for="text">Twitter/X:</label>
+            <input type="text" placeholder="ex. @theartsfuse" id="twitter" name="twitter"><br>
+            <label for="text">Instagram:</label>
+            <input type="text" placeholder="ex. @theartsfuse" id="instagram" name="instagram"><br> 
+            <label for="text">Other (please specify):</label>
+            <input type="text" placeholder="ex. @theartsfuse on Weibo" id="instagram" name="instagram"><br> 
+            <label for="message">Additional Media Notes:</label>
+            <textarea id="message" placeholder="'It might be a good idea to share this one on Truth Social...', or 'Don't tag the Boston Globe, please...', etc." name="message" rows="4"></textarea><br><br> <!-- Removed 'optional' -->
+        </div><br>
+            <label for="media">Attach Images for Social Media </label>(the editor cannot guarantee these will be used):</label>
+            <input type="file" id="media" name="media"><br><br>
+
+            <h2>Article</h2>
+            <p>Choose one option for submission.</p>
+            <label for="richTextEditor">Complete text:</p>
+            <div id="richTextEditor" contenteditable="true"></div><br>
+            <label for="text">Shareable document link:</label>
+            <input type="text" placeholder="ex. https://docs.google.com..." id="doclink" name="doclink"><br><br> 
+            <label for="article">Attach Document:</label><br> 
+            <input type="file" id="article" name="article"><br><br> 
+            <button type="submit">Send</button>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>

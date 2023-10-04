@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap');
+
+body {
+    padding: 20px;
+    font-size: 16px;
+    align-items: center;
+    background: linear-gradient(320deg, #ff0000, #fff8c4, #960f0f);
+    font-family: 'Dosis', sans-serif;
+    font-display: swap;
+    justify-content: center;
+}
+
+header {
+    background-color: #333;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    color: bisque;
+    margin: 0;
+}
+
+header img{
+    height: 40%;
+    width: 40%;
+}
+
+#contactForm #hashtagentry,
+#contactForm #mentions,{
+    padding: 20px;
+    border: 1px solid;
+    border-color: #333;
+    border-radius: 25px;
+    background-color: rgba(255, 228, 196, 0.4);
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    width: 75vh;
+}
+
+#contactForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#contactForm h2{
+    color:bisque;
+    background-color: #960f0f;
+    padding: 6px;
+    border-radius: 6px;
+}
+
+#contactForm input[type="text"],
+#contactForm textarea,
+#contactForm input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form #article,
+form #media{
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#contactForm h3{
+    margin-left: 10px;
+    color: bisque;
+    background-color: #960f0f;
+    padding: 6px;
+    border-radius: 60px;
+    opacity: 0.6;
+}
+
+#contactForm button {
+    padding: 10px 20px;
+    background-color: #960f0f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    display: block;
+    margin: 0 auto;
+}
+
+#contactForm button:hover {
+    background-color: #ff0000;
+}
+
+#richTextEditor {
+    border: 1px solid #ccc;
+    min-height: 200px;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    background-color: white;
+    margin-top: 10px;
+    width: 100vh;
+    display: block;
+    margin: 0 auto;
+}
