@@ -1,0 +1,67 @@
+/* Reset some default margin/padding and set box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Add some basic styling */
+body {
+    font-family: Arial, sans-serif;
+}
+
+button {
+    margin: 5px;
+}
+
+/* Style the options container */
+.options {
+    text-align: center;
+    margin: 20px;
+}
+
+/* Style the sorting buttons */
+.options button {
+    background-color: #0074d9;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.options button:hover {
+    background-color: #0056b3;
+}
+
+/* Style the select element */
+#arrayLength {
+    padding: 5px;
+    font-size: 16px;
+}
+
+/* Style the statistics section */
+p {
+    text-align: center;
+    margin: 10px;
+    font-weight: bold;
+}
+
+/* Style the array container */
+#array {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 10px;
+    gap: 5px; /* Add some spacing between array elements */
+}
+
+/* Style each array element */
+.array-element {
+    background-color: #f39c12;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    min-width: 20px;
+    border-radius: 5px;
+}

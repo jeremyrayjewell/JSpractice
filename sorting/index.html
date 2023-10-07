@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Sorting Algorithm Demo</title>
+    <style>
+        /* Add some basic styling */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        button {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="options">
+       <h1>Sorting Algorithm Demo</h1>
+       <label for="arrayLenth">Array length:</label>
+       <select name="arrayLength" id="arrayLength">
+        <option value="1000">1000</option>
+       <option value="2000">2000</option>
+         <option value="5000">5000</option>
+         <option value="10000">10000</option>
+       </select><br>    
+       <button id="bubbleSortBtn">Bubble Sort</button>
+     <button id="selectionSortBtn">Selection Sort</button>
+        <button id="mergeSortBtn">Merge Sort</button>
+        <button id="quickSortBtn">Quick Sort</button>
+        <button id="insertionSortBtn">Insertion Sort</button>
+        <button id="heapSortBtn">Heap Sort</button>
+    </div>
+
+    <p>Comparisons: <span id="comparisons">0</span></p>
+    <p>Swaps: <span id="swaps">0</span></p>
+    <p>Time Taken (ms): <span id="timeTaken">0</span></p>
+
+    <div id="array">
+        <!-- Display the array elements here -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
