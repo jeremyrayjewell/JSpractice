@@ -56,6 +56,10 @@ li {
 .process li{
     font-size: 16px;
 }
+
+.process figure img{
+    max-width: 100%;
+}
   
 .code-container{
     flex: 2;

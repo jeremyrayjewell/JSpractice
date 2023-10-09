@@ -1,4 +1,4 @@
-// Create an array to hold CodeMirror instances and functions for each terminal
+// Create an array to hold CodeMirror instances, input, output, and console elements for each terminal
 const terminals = [];
 
 // Initialize CodeMirror for each terminal
@@ -9,11 +9,12 @@ for (let i = 1; i <= 6; i++) {
         lineNumbers: true,
     });
 
-    // Store CodeMirror instance and associated functions in the array
+    // Store CodeMirror instance and associated elements in the array
     terminals[i] = {
         editor,
         inputElement: document.getElementById(`input${i}`),
         outputElement: document.getElementById(`output${i}`),
+        consoleElement: document.getElementById(`console${i}`),
     };
 }
 
@@ -24,12 +25,15 @@ function runCode(terminalIndex) {
 
     try {
         const result = eval(code);
+
+        // Append the result to the console
         if (Array.isArray(result)) {
-            terminal.outputElement.innerText = "Sorted Array: " + result.join(", ");
+            terminal.consoleElement.innerText += "Sorted Array: " + result.join(", ") + "\n";
         } else {
-            terminal.outputElement.innerText = result;
+            terminal.consoleElement.innerText += result + "\n";
         }
     } catch (error) {
-        terminal.outputElement.innerText = "Error: " + error;
+        // Append errors to the console
+        terminal.consoleElement.innerText += "Error: " + error + "\n";
     }
 }
