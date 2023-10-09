@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pseudostyles.css">
     <title>Sorting Algorithms Explained</title>
 </head>
 <body>
@@ -12,7 +12,12 @@
       <p>Examples in Pseudocode</p><br>
     </div>
     <div class="bubbleSort">
-        <h3>Bubble Sort</h3>
+        <h3>Bubble Sort</h3><br>
+        <ul>
+            <li>Bubble sort works by repeatedly stepping through the list to be sorted, comparing each pair of adjacent items, and swapping them if they are in the wrong order.</li>
+            <li>It continues this process until no more swaps are needed, indicating that the list is sorted.
+            </li>
+        </ul>
         <code>
     function bubbleSort(arr):
         n = length(arr)
@@ -24,7 +29,15 @@
         </code>
     </div>
     <div class="selectionSort">
-        <h3>Selection Sort</h3>
+        <h3>Selection Sort</h3><br>
+        <ul>
+            <li>Selection sort divides the input list into two parts: the sorted part and the unsorted part.
+            </li>
+            <li>It repeatedly finds the minimum element from the unsorted part and swaps it with the first element of the unsorted part.
+            </li>
+            <li>This process continues until the entire list is sorted.
+            </li>
+        </ul>
         <code>
     function selectionSort(arr):
         n = length(arr)
@@ -38,7 +51,13 @@
         </code>
     </div>
     <div class="mergeSort">
-        <h3>Merge Sort</h3>
+        <h3>Merge Sort</h3><br>
+        <ul>
+            <li>Merge sort is a divide-and-conquer algorithm that divides the input list into smaller halves until each sub-list contains only one element (considered sorted).
+            </li>
+            <li>It then merges these sub-lists back together by comparing and merging elements in sorted order until a single sorted list is obtained.
+            </li>
+        </ul>
         <code>
     function mergeSort(arr):
         if length(arr) <= 1:
@@ -73,7 +92,15 @@
         </code>
     </div>
     <div class="quickSort">
-        <h3>Quick Sort</h3>
+        <h3>Quick Sort</h3><br>
+        <ul>
+            <li>Quick sort also uses a divide-and-conquer approach but chooses a "pivot" element from the list.
+            </li>
+            <li>It partitions the list into two sub-lists: elements less than the pivot and elements greater than the pivot.
+            </li>
+            <li>It recursively sorts these sub-lists and combines them to produce a sorted list.
+            </li>
+        </ul>
         <code>
     function quickSort(arr):
         if length(arr) <= 1:
@@ -100,7 +127,15 @@
         </code>
     </div>
     <div class="insertionSort">
-        <h3>Insertion Sort</h3>
+        <h3>Insertion Sort</h3><br>
+        <ul>
+            <li>Insertion sort builds the final sorted list one item at a time.
+            </li>
+            <li>It takes each element from the unsorted part and inserts it into its correct position in the sorted part of the list.
+            </li>
+            <li>This process continues until the entire list is sorted.
+            </li>
+        </ul>
         <code>
     function insertionSort(arr):
         n = length(arr)
@@ -115,7 +150,17 @@
         </code>
     </div>
     <div class="heapSort">
-        <h3>Heap Sort</h3>
+        <h3>Heap Sort</h3><br>
+        <ul>
+            <li>Heap sort is based on the binary heap data structure, which is a complete binary tree where each parent node is greater (for max heap) or smaller (for min heap) than its children.
+            </li>
+            <li>It builds a heap from the input list, ensuring that the largest (or smallest) element is at the root.
+            </li>
+            <li>It repeatedly removes the root element and replaces it with the last element in the heap, then restores the heap property.
+            </li>
+            <li>This process continues until the entire list is sorted.
+            </li>
+        </ul>
         <code>
     function heapSort(arr):
         buildMaxHeap(arr)
