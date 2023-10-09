@@ -18,7 +18,9 @@
             <li>It continues this process until no more swaps are needed, indicating that the list is sorted.
             </li>
         </ul>
-        <code>
+        <div class="details">
+            <div class="code-container">
+                <code>
     function bubbleSort(arr):
         n = length(arr)
         for i from 0 to n-1:
@@ -26,7 +28,32 @@
                 if arr[j] > arr[j+1]:
                     swap(arr[j], arr[j+1])
         return arr
-        </code>
+                </code>
+            </div>
+            <div class="process">
+                <ol>
+                    <li>Define a function called bubbleSort that takes an array arr as its parameter.
+                    </li>
+                    <li>Get the length of the input array arr and store it in a variable n. This will help in determining the number of iterations needed.
+                    </li>
+                    <li>Start the outer loop with variable i from 0 to n-1. This outer loop will control the number of passes through the array.
+                    </li>
+                    <li>Inside the outer loop, start another loop with variable j from 0 to n-1-i. The value of n-1-i ensures that in each pass, the last i elements are already in their correct positions since the largest element will have "bubbled up" to the end of the array.</li>
+                    <li>Within the inner loop, compare the current element arr[j] with the next element arr[j+1]. If arr[j] is greater than arr[j+1], it means they are in the wrong order, and you should swap them to sort the array in ascending order.
+                    </li>
+                    <li>Perform the swap operation on arr[j] and arr[j+1]. This can be implemented as a separate function called swap that exchanges the values of two elements.
+                    </li>
+                    <li>Continue the inner loop until it has iterated through all relevant elements in the array.
+                    </li>
+                    <li>Once the inner loop completes, the largest unsorted element has been moved to the end of the array. Repeat this process for all elements by continuing the outer loop.
+                    </li>
+                    <li>After both loops have finished executing, the array is sorted in ascending order.
+                    </li>
+                    <li>Finally, return the sorted array arr.
+                    </li>
+                </ol>
+            </div>
+        </div>
     </div>
     <div class="selectionSort">
         <h3>Selection Sort</h3><br>
@@ -38,7 +65,9 @@
             <li>This process continues until the entire list is sorted.
             </li>
         </ul>
-        <code>
+        <div class="details">
+            <div class="code-container">
+                <code>
     function selectionSort(arr):
         n = length(arr)
         for i from 0 to n-1:
@@ -48,7 +77,33 @@
                     minIndex = j
             swap(arr[i], arr[minIndex])
         return arr
-        </code>
+                </code>
+            </div>
+            <div class="process">
+                <ol>
+                    <li>Define a function called selectionSort that takes an array arr as its parameter.
+                    </li>
+                    <li>Get the length of the input array arr and store it in a variable n. This will help in determining the number of iterations needed.
+                    </li>
+                    <li>Start the outer loop with variable i from 0 to n-1. This outer loop will control the position of the element to be swapped (the element at index i).
+                    </li>
+                    <li>Inside the outer loop, initialize a variable minIndex to the current value of i. This variable will be used to keep track of the index of the minimum element found during the inner loop.
+                    </li>
+                    <li>Start another loop with variable j from i+1 to n-1. This inner loop searches for the minimum element among the unsorted elements, which are located from index i+1 to the end of the array.
+                    </li>
+                    <li>Within the inner loop, compare the element at index j (arr[j]) with the element at index minIndex (arr[minIndex]). If arr[j] is smaller than arr[minIndex], update the value of minIndex to j. This identifies the index of the smallest element in the unsorted portion of the array.</li>
+                    <li>After the inner loop completes, you have found the index of the minimum element in the unsorted portion of the array.</li>
+                    <li>Swap the element at index i (arr[i]) with the element at the minIndex. This places the minimum element in its correct sorted position at index i.
+                    </li>
+                    <li>Continue the outer loop, incrementing i by 1 in each iteration. This process repeats until all elements are sorted.
+                    </li>
+                    <li>After both loops have finished executing, the array is sorted in ascending order.
+                    </li>
+                    <li>Finally, return the sorted array arr.
+                    </li>
+                </ol>
+            </div>
+        </div>
     </div>
     <div class="mergeSort">
         <h3>Merge Sort</h3><br>
@@ -58,7 +113,9 @@
             <li>It then merges these sub-lists back together by comparing and merging elements in sorted order until a single sorted list is obtained.
             </li>
         </ul>
-        <code>
+        <div class="details">
+            <div class="code-container">
+                <code>
     function mergeSort(arr):
         if length(arr) <= 1:
         return arr
@@ -89,7 +146,45 @@
             result.extend(right)
     
         return result
-        </code>
+            </code>
+            </div>
+            <div class="process">
+                <ol>
+                    <li>Define a function called mergeSort that takes an array arr as its parameter.
+                    </li>
+                    <li>Check if the length of the input array arr is less than or equal to 1. If this condition is met, return the array as it is already sorted (base case).
+                    </li>
+                    <li>Calculate the middle index mid of the array by dividing the length of arr by 2. This will be used to split the array into two subarrays.
+                    </li>
+                    <li>Create two subarrays: left and right. left contains elements from the beginning of arr up to mid-1, and right contains elements from mid to the end of arr.
+                    </li>
+                    <li>Recursively call mergeSort on both left and right. This step divides the problem into smaller subproblems, sorting each subarray.
+                    </li>
+                    <li>Finally, return the result of merging the sorted left and right subarrays using the merge function.
+                    </li>
+                    <li>Define a function called merge that takes two sorted arrays, left and right, as its parameters.
+                    </li>
+                    <li>Initialize an empty array called result to store the merged result.
+                    </li>
+                    <li>Use a while loop to compare the first elements of left and right subarrays and merge them in sorted order.
+                    </li>
+                    <li>While both left and right are not empty:
+                        <ul>
+                            <li>If the first element of left (left[0]) is less than or equal to the first element of right (right[0]), append left[0] to result and remove it from left.
+                            </li>
+                            <li>Otherwise, append right[0] to result and remove it from right.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>After the while loop, if there are any remaining elements in left, extend result with those elements.
+                    </li>
+                    <li>Similarly, if there are any remaining elements in right, extend result with those elements.
+                    </li>
+                    <li>Finally, return the result, which is the merged and sorted array containing all elements from left and right.
+                    </li>
+                </ol>
+            </div>
+        </div>
     </div>
     <div class="quickSort">
         <h3>Quick Sort</h3><br>
@@ -101,7 +196,9 @@
             <li>It recursively sorts these sub-lists and combines them to produce a sorted list.
             </li>
         </ul>
-        <code>
+        <div class="details">
+            <div class="code-container">
+                <code>
     function quickSort(arr):
         if length(arr) <= 1:
             return arr
@@ -124,7 +221,37 @@
     function choosePivotIndex(arr):
         // Choose a pivot index (e.g., first, last, median-of-three, etc.)
         // Implement your choice here
-        </code>
+                </code>
+            </div>
+            <div class="process">
+                <ol>
+                    <li>Define a function called quickSort that takes an array arr as its parameter.
+                    </li>
+                    <li>Check if the length of the input array arr is less than or equal to 1. If this condition is met, return the array as it is already sorted (base case).
+                    </li>
+                    <li>Choose a pivot element by calling the choosePivotIndex function. The pivot element is a crucial element in the Quick Sort algorithm, and the choice of pivot can impact the algorithm's efficiency.
+                    </li>
+                    <li>Initialize two empty arrays: left and right. These arrays will be used to store elements that are less than and greater than the pivot, respectively.
+                    </li>
+                    <li>Iterate through each element in the input array arr. For each element:
+                        <ul>
+                            <li>If the element is less than the pivot, append it to the left array.
+                            </li>
+                            <li>If the element is greater than the pivot, append it to the right array.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Recursively call quickSort on both the left and right arrays. This step sorts the two subarrays.
+                    </li>
+                    <li>Finally, return the concatenation of the sorted left array, the pivot element, and the sorted right array. This combines the sorted subarrays with the pivot element to produce the final sorted array.
+                    </li>
+                    <li>Define a function called choosePivotIndex that takes an array arr as its parameter. This function is responsible for selecting the pivot element.
+                    </li>
+                    <li>The specific method for choosing the pivot index is left unimplemented in the code comments: // Choose a pivot index (e.g., first, last, median-of-three, etc.). The choice of pivot index can affect the efficiency of the Quick Sort algorithm.
+                    </li>
+                </ol>
+            </div>
+        </div>
     </div>
     <div class="insertionSort">
         <h3>Insertion Sort</h3><br>
@@ -136,7 +263,9 @@
             <li>This process continues until the entire list is sorted.
             </li>
         </ul>
-        <code>
+        <div class="details">
+            <div class="code-container">
+                <code>
     function insertionSort(arr):
         n = length(arr)
         for i from 1 to n-1:
@@ -147,7 +276,39 @@
                 j = j - 1
             arr[j+1] = key
         return arr        
-        </code>
+                </code>
+            </div>
+            <div class="process">
+                <ol>
+                    <li>Define a function called insertionSort that takes an array arr as its parameter.
+                    </li>
+                    <li>Get the length of the input array arr and store it in a variable n. This will help in determining the number of iterations needed.
+                    </li>
+                    <li>Start a loop with variable i from 1 to n-1. This loop will iterate through the array, starting from the second element (index 1) and continuing to the last element (index n-1).
+                    </li>
+                    <li>Within the loop, store the current element at index i in a variable key. This element will be compared and inserted into the correct position within the already sorted part of the array.
+                    </li>
+                    <li>Initialize a variable j to i - 1. This variable j is used to traverse the already sorted part of the array in reverse order.
+                    </li>
+                    <li>Start a nested while loop that continues as long as j is greater than or equal to 0 and the element at index j (arr[j]) is greater than the key. This inner loop is responsible for shifting elements to the right to make space for the key element.
+                    </li>
+                    <li>Within the inner loop, assign the value of arr[j] to the element at index j+1. This effectively shifts the element to the right.
+                    </li>
+                    <li>Decrement the value of j by 1 to move to the previous element in the sorted part of the array.
+                    </li>
+                    <li>Once the while loop exits, it means that the correct position for the key element has been found, and it should be placed at index j+1.
+                    </li>
+                    <li>Assign the value of key to the element at index j+1, effectively inserting the key element into the sorted part of the array.
+                    </li>
+                    <li>Continue the outer loop, repeating steps 4-10 for the next element.
+                    </li>
+                    <li>After the loop completes, the array is sorted in ascending order.
+                    </li>
+                    <li>Finally, return the sorted array arr.
+                    </li>
+                </ol>
+            </div>
+        </div>
     </div>
     <div class="heapSort">
         <h3>Heap Sort</h3><br>
@@ -161,7 +322,9 @@
             <li>This process continues until the entire list is sorted.
             </li>
         </ul>
-        <code>
+        <div class="details">
+            <div class="code-container">
+                <code>
     function heapSort(arr):
         buildMaxHeap(arr)
         n = length(arr)
@@ -189,7 +352,52 @@
         if largest != i:
             swap(arr[i], arr[largest])
             maxHeapify(arr, largest, n)        
-        </code>
+                </code>
+            </div>
+            <div class="process">
+                <ol>
+                    <li>Define a function called heapSort that takes an array arr as its parameter.
+                    </li>
+                    <li>Call the buildMaxHeap function to transform the input array arr into a max-heap data structure. A max-heap is a binary tree where the parent nodes are greater than or equal to their children nodes.
+                    </li>
+                    <li>Get the length of the input array arr and store it in a variable n.
+                    </li>
+                    <li>Start a loop with variable i from n-1 down to 0. This loop iterates in reverse order and represents the process of extracting the maximum element from the max-heap and placing it at the end of the array.
+                    </li>
+                    <li>Inside the loop:
+                        <ul>
+                            <li>Swap the first element (the maximum element) in the max-heap (located at index 0) with the element at index i. This effectively moves the maximum element to the end of the array.</li>
+                            <li>Call the maxHeapify function to restore the max-heap property in the reduced heap (excluding the last element that is now in its final sorted position).
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Repeat steps 4 and 5 for each element until the entire array is sorted in ascending order.
+                    </li>
+                    <li>Define a function called buildMaxHeap that takes an array arr as its parameter.
+                    </li>
+                    <li>Get the length of the input array arr and store it in a variable n.
+                    </li>
+                    <li>Start a loop with variable i from floor(n/2) - 1 down to 0. This loop iterates over the internal nodes of the binary tree, excluding the leaves. The purpose of this loop is to call maxHeapify on each internal node to ensure that the max-heap property is satisfied.
+                    </li>
+                    <li>Inside the loop: Call the maxHeapify function on the element at index i to restore the max-heap property within the subtree rooted at that element.
+                    </li>
+                    <li>Define a function called maxHeapify that takes an array arr, an index i, and the length n as its parameters.
+                    </li>
+                    <li>Initialize a variable largest to the current index i.
+                    </li>
+                    <li>Calculate the indices of the left child (left) and right child (right) of the element at index i.
+                    </li>
+                    <li>Check if the left child index (left) is within the bounds of the array (left < n) and if the value at arr[left] is greater than the value at arr[largest]. If this condition is met, update largest to be left.
+                    </li>
+                    <li>Similarly, check if the right child index (right) is within the bounds of the array (right < n) and if the value at arr[right] is greater than the value at arr[largest]. If this condition is met, update largest to be right.
+                    </li>
+                    <li>If largest is not equal to the original index i, it means that the max-heap property is violated at index i. In this case, swap the values at indices i and largest to correct the violation.
+                    </li>
+                    <li>Recursively call maxHeapify on the element at the new index largest. This ensures that the max-heap property is maintained throughout the subtree rooted at largest.
+                    </li>
+                </ol>
+            </div>
+        </div>
     </div>
 </body>
 </html>
