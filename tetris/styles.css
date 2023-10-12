@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@700&family=Press+Start+2P&family=Roboto:wght@300;400;500;700&display=swap');
+
+body{
+    background-image: url('amazing.png');
+    background-size: 100% 120%;
+    background-size: no-repeat;
+    color: #fff;
+    font-family: 'Press Start 2P', sans-serif;
+    text-align: center;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+}
+
+.note {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+}
+
+canvas{
+    border: solid 0.2em #fff;
+    height: 90vh;
+}
+
+img{
+    border-radius: 15px;
+    max-height: 120%;
+    animation: breathing 2s ease-in-out infinite;
+}
+
+@keyframes breathing {
+    0% {
+      transform: scale(1); 
+    }
+    50% {
+      transform: scale(1.1); 
+    }
+    100% {
+      transform: scale(1); 
+    }
+  }
+
+
+p{
+    font-size: 8px;
+}
