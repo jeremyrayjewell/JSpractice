@@ -1,6 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 body{
-    background: ghostwhite;
-    color: dimgray;
+    background-image: url('background.png');
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: center center;
+    background-color: black;
+    color: rgb(182, 185, 0);
     font-family: serif;
     text-align: center;
 }
@@ -13,11 +19,12 @@ h1{
     margin: 5% auto;
     border-radius: 5px;
     text-align: center;
+    background: linear-gradient(to right, transparent, transparent, rgba(0, 16, 238, 0.171), transparent, transparent);
 }
 
 .box{
     display: inline-block;
-    border: 1px solid gray;
+    border: 1px solid rgba(124, 255, 2, 0.589);
     width: 100px;
     height: 100px;
     text-align: center;
@@ -28,7 +35,7 @@ h1{
 span{
     position: absolute;
     font-size: 75px;
-    font-family: sans-serif;
+    font-family: 'Press Start 2P',sans-serif;
     text-align: center;
     height: 75px;
     width: 75px;
@@ -71,6 +78,18 @@ span{
     top: 0;
 }
 
+img{
+    max-width: 30%;
+    animation: swing 2s infinite;
+}
+
+@keyframes swing { 
+    20% { transform: rotate(3deg); } 
+    40% { transform: rotate(-3deg); } 
+    60% { transform: rotate(1deg); } 
+    80% { transform: rotate(-2deg); } 
+    100% { transform: rotate(-1deg); } 
+ }
 button{
     background: dimgray;
     border-radius: 2px;
