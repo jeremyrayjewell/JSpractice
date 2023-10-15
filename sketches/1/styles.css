@@ -18,6 +18,25 @@
     background: linear-gradient(to bottom, rgba(17, 26, 37, 0.8), rgba(37, 36, 37, 0.2));
 }
 
+#navbar {
+    background-color: #333;
+    overflow: hidden;
+}
+
+#navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
 .hero-slider{
     width: 100;
     height: 100vh;
