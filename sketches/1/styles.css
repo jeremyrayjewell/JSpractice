@@ -1,13 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto+Slab:wght@300;400;500;600;700&display=swap');
 
-
-*{
+* {
     margin: 0;
     padding: 0;
-    box-sizing: border-box   
+    box-sizing: border-box;
 }
 
-.gradient{
+.gradient {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -16,6 +15,45 @@
     left: 0;
     right: 0;
     background: linear-gradient(to bottom, rgba(17, 26, 37, 0.8), rgba(37, 36, 37, 0.2));
+}
+
+h1, h2, p {
+    font-family: Roboto, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    padding: 10px;
+}
+
+h2 {
+    margin-top: 20px;
+    margin-left: 12px;
+}
+
+p {
+    margin: 10px 20px;
+    line-height: 1.6;
+    color: #555;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 10px;
+    font-size: smaller;
+    list-style: none;
+}
+
+li {
+    margin: 5px 0;
+}
+
+.content-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 #navbar {
@@ -37,13 +75,58 @@
     color: black;
 }
 
-.hero-slider{
-    width: 100;
+#solidbg {
+    background-color: rgba(190, 183, 174);
+}
+
+#transbg {
+    background-image: url('logoabout.png');
+    background-position: center top;
+    background-color: #000;
+}
+
+#container {
+    background-color: rgba(190, 183, 174, 0.87);
+    margin: 0 150px;
+    padding: 35px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+#content-inside {
+    display: flex;
+    justify-content: center;
+}
+
+#content-inside > img {
+    max-width: 10%;
+    height: auto;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+#inside-list {
+    display: flex;
+    justify-content: center;
+}
+
+#inside-list > img {
+    max-width: 10%;
+    height: auto;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-slider {
+    width: 100%;
     height: 100vh;
     overflow: hidden;
 }
 
-.hero-slider .carousel-cell{
+.hero-slider .carousel-cell {
     width: 100%;
     height: 100%;
     background: no-repeat center/cover;
@@ -53,17 +136,17 @@
     text-align: center;
 }
 
-.hero-slider .carousel-cell .slide-logo{
+.hero-slider .carousel-cell .slide-logo {
     width: 50%;
     height: 50%;
 }
 
-.hero-slider .carousel-cell .info-container{
+.hero-slider .carousel-cell .info-container {
     color: #fff;
     position: relative;
 }
 
-.hero-slider .carousel-cell .info-container .header{
+.hero-slider .carousel-cell .info-container .header {
     font-family: 'Roboto Slab', sans-serif;
     font-size: 35px;
     font-weight: 400;
@@ -73,16 +156,16 @@
     margin-bottom: 8px;
 }
 
-.hero-slider .carousel-cell .info-container .text{
+.hero-slider .carousel-cell .info-container .text {
     font-family: 'Montserrat', sans-serif;
     font-size: 46px;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 4px;
-    margin-bottom: 32px; 
+    margin-bottom: 32px;
 }
 
-.hero-slider .carousel-cell .info-container button{
+.hero-slider .carousel-cell .info-container button {
     padding: 12px 20px;
     background: transparent;
     border: 1px solid #fff;
@@ -96,7 +179,7 @@
     transition: all 0.3s ease;
 }
 
-.hero-slider .carousel-cell .info-container button:hover{
+.hero-slider .carousel-cell .info-container button:hover {
     background: #fff;
     color: #000;
     font-weight: bold;
@@ -108,15 +191,15 @@
     background: transparent;
 }
 
-.hero-slider .flickity-prev-next-button .arrow{
+.hero-slider .flickity-prev-next-button .arrow {
     fill: #fff;
 }
 
-.hero-slider .flickity-page-dots{
+.hero-slider .flickity-page-dots {
     bottom: 60px;
 }
 
-.hero-slider .flickity-page-dots .dot{
+.hero-slider .flickity-page-dots .dot {
     width: 40px;
     height: 10px;
     background: rgba(255, 255, 255, 0.4);
@@ -126,6 +209,6 @@
 }
 
 .hero-slider .flickity-page-dots .dot:hover,
-.hero-slider .flickity-page-dots .dot.is-selected{
+.hero-slider .flickity-page-dots .dot.is-selected {
     background: #fff;
 }
