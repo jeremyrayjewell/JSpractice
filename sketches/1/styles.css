@@ -120,6 +120,8 @@ li {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
+/* HERO */
+
 .hero-slider {
     width: 100%;
     height: 100vh;
@@ -211,4 +213,79 @@ li {
 .hero-slider .flickity-page-dots .dot:hover,
 .hero-slider .flickity-page-dots .dot.is-selected {
     background: #fff;
+}
+
+/* Media Queries for Tablets and Smartphones */
+@media screen and (max-width: 1024px) {
+    #content-inside {
+        display: flex-column;
+        justify-content: center;
+    }
+    #container {
+        margin: 0 5px; /* Adjust the margin for tablets */
+        padding: 10px; /* Adjust the padding for tablets */
+    }
+
+    #content-inside > img,
+    #inside-list > img {
+        max-width: 10px;
+        margin: 50px; 
+    }
+
+    .hero-slider {
+        height: 70vh; /* Adjust the height for tablets */
+    }
+
+    .hero-slider .carousel-cell .header {
+        font-size: 20px; /* Adjust font size for tablets */
+        letter-spacing: 1px; /* Adjust letter spacing for tablets */
+        margin-bottom: 6px; /* Adjust margin for tablets */
+    }
+
+    .hero-slider .carousel-cell .text {
+        font-size: 24px; /* Adjust font size for tablets */
+        letter-spacing: 1px; /* Adjust letter spacing for tablets */
+        margin-bottom: 12px; /* Adjust margin for tablets */
+    }
+
+    .hero-slider .carousel-cell .button {
+        padding: 8px 14px; /* Adjust button size for tablets */
+        font-size: 8px; /* Adjust font size for tablets */
+        letter-spacing: 2px; /* Adjust letter spacing for tablets */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #container {
+        margin: 0 5px; /* Adjust the margin for smartphones */
+        padding: 10px; /* Adjust the padding for smartphones */
+    }
+
+    #content-inside > img,
+    #inside-list > img {
+        max-width: 100%;
+        margin: 5px; /* Adjust margin for smartphones */
+    }
+
+    .hero-slider {
+        height: 60vh; /* Adjust the height for smartphones */
+    }
+
+    .hero-slider .carousel-cell .header {
+        font-size: 18px; /* Adjust font size for smartphones */
+        letter-spacing: 1px; /* Adjust letter spacing for smartphones */
+        margin-bottom: 4px; /* Adjust margin for smartphones */
+    }
+
+    .hero-slider .carousel-cell .text {
+        font-size: 20px; /* Adjust font size for smartphones */
+        letter-spacing: 1px; /* Adjust letter spacing for smartphones */
+        margin-bottom: 10px; /* Adjust margin for smartphones */
+    }
+
+    .hero-slider .carousel-cell .button {
+        padding: 8px 12px; /* Adjust button size for smartphones */
+        font-size: 8px; /* Adjust font size for smartphones */
+        letter-spacing: 2px; /* Adjust letter spacing for smartphones */
+    }
 }
