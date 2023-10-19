@@ -92,9 +92,41 @@ let drawRect = (x, y, width, height, color) => {
 let drawBackground = () => {
   drawRect(0, 0, canvas.width, canvas.height, "#bca0dc");
   for(let i = 0; i < squareCountX + 1; i++){
-  drawRect(size * i - whiteLineThickness, 0, whiteLineThickness, canvas.height, "white");
+  drawRect(size * i - whiteLineThickness, 
+    0, 
+    whiteLineThickness, 
+    canvas.height, 
+    "white"
+    );
+  }
+
+  for(let i = 0; i < squareCountY + 1; i++){
+    drawRect(
+      0,
+      size * i - whiteLineThickness, 
+      canvas.width, 
+      whiteLineThickness, 
+      "white"
+    );
   }
 };
+
+let drawCurrentTetris = () => {
+  for(let i = 0; i < currentShape.template.length; i++){
+    for(let j = 0; j < currentShape.template.length; j++){
+      if(currentShape.template[i][j] == 0) continue
+      ctx.drawImage(
+        image, 
+        currentShape.imageX, 
+        currentShape.imageY, 
+        imageSquareSize, 
+        imageSquareSize,
+        Math.trunc(currentShape.x) * size + size * i,
+        Math.trunc(currentShape.y) * size + size * j,
+      );
+    }
+  };
+}
 
 let draw = () => {
   ctx.clearRect(0,0, canvas.width, canvas.height);
@@ -128,4 +160,4 @@ let resetVars = () => {
 
 gameLoop()
 
-//15:48
+// 18:46
