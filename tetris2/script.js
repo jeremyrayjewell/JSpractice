@@ -6,7 +6,6 @@ class Tetris {
       this.x = squareCountX/2
       this.y = 0;
   }
-
   checkBottom() {
     for (let i = 0; i < this.template.length; i++) {
       for (let j = 0; j < this.template.length; j++) {
@@ -107,10 +106,16 @@ let update = () => {
   if(currentShape.checkBottom()) {
     currentShape.y += 1;
   } else {
+    for(let k = 0 ;k < currentShape.template.length;k++) {
+      for(let l = 0; l < currentShape.template.length;l++) {
+        if(currentShape.template[k][l] == 0) continue
+        gameMap[currentShape.getTruncedPosition().y + 1][currentShape.getTruncedPosition().x + k
+        ] = {imageX: currentShape.imageX, imageY: currentShape.imageY };
+      }
+    }
     currentShape = nextShape;
     nextShape = getRandomShape();
   }
-
 };
 
 let drawRect = (x, y, width, height, color) => {
@@ -197,4 +202,4 @@ resetVars();
 gameLoop();
 
 
-//26:04
+//28: 16
