@@ -72,3 +72,16 @@ p a {
     text-decoration:none;
     color:#fff;
 }
+
+/* Tablet and phone styles */
+@media screen and (max-width: 768px) {
+    img {
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 468px) {
+    img {
+        max-width: 300px;
+    }
+}
