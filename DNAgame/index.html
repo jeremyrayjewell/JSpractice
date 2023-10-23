@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamagotchi Evolver</title>
+</head>
+<body>
+    <div class="game-container">
+        <br>
+        <br>
+        <div class="game">
+            <img class="logo" src="logo.png" alt="">
+            <div class="screen">
+                <p id="organism">Nothing hatched yet.</p>
+                <p id="survival"></p>
+            </div>
+            <br>
+            <div class="screen">
+                <img id="organismImage" src="egg.png" alt="Organism Image">
+                <img id="sickImage" class="hidden" src="transparent.png" alt="Sick Organism Image">
+            </div>
+            <br>
+            <div class="buttons">
+                <button id="generateButton">Generate </button>
+                <button id="mutateButton">Mutate</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

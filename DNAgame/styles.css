@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@700&family=Press+Start+2P&family=Roboto:wght@300;400;500;700&display=swap');
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('bg1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('bg.png');
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px);
+    z-index: -1;
+}
+
+.game-container {
+    background-image: url('game.png');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    max-width: 600px; /* Max width of the container */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px; 
+    border-radius: 5pc;
+}
+.game {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.game .logo {
+    width: 40%;
+    height: auto; 
+    margin-bottom: 35px;
+    margin-left: 90px;
+}
+
+.game .screen #organism {
+    font-size: xx-small;
+    overflow: auto;
+}
+
+.game .screen #survival {
+    font-size: xx-small;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.screen {
+    background-color: greenyellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 150px;
+    margin-bottom: 5px;
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: smaller;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.9);
+    border: 20px solid #333;
+}
+
+#sickImage.hidden,
+#organismImage.hidden {
+    visibility: hidden;
+}
+
+#organismImage {
+    max-width: 60px;
+    animation: bounce .2s infinite alternate ease-in-out;
+    v
+}
+
+#sickImage {
+    max-height: 20px;
+    margin-left: 20px;
+    opacity: 0.7;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    background-color: #4CAF50; /* Button background color */
+    border: none;
+    color: antiquewhite;
+    padding: 5px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Drop shadow */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: smaller;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.9);
+    margin-left: 50px;
+    margin-right: 50px
+}
+
+button:hover {
+    background-color: #45a049; /* Change the background color on hover */
+    transform: scale(1.05); /* Slight scale-up on hover */
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-5px); /* Adjust the distance for desired bounce height */
+    }
+}
+
+#spinningImage {
+    width: 115px;
+    border-radius: 50%;
+    animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
