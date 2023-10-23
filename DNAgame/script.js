@@ -60,6 +60,10 @@ for (let i = 0; i < organism.dna.length; i += 5) {
 const dnaInfo = dnaLines.join('\n');
 
 function generateOrganism() {
+    if (organism.willLikelySurvive()) {
+        return;
+    }
+
     organism = pAequorFactory(++specimenNum, mockUpStrand());
 
     // Generate a formatted DNA string
