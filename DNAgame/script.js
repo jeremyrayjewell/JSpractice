@@ -119,7 +119,18 @@ function updateOrganismImage() {
     const organismImage = document.getElementById("organismImage");
     const imageFileName = organism.getOrganismImage();
     organismImage.src = imageFileName;
+
+    // Check if the organism is unlikely to survive and apply transformations
+    if (!organism.willLikelySurvive()) {
+        organismImage.style.animation = 'none';
+        organismImage.style.transform = 'rotate(180deg) scale(0.8)'; // Rotate and shrink
+    } else {
+        // If it's likely to survive, apply the bounce animation and reset transformations
+        organismImage.style.animation = 'bounce .2s infinite alternate ease-in-out';
+        organismImage.style.transform = 'none';
+    }
 }
+
 
 document.getElementById("generateButton").addEventListener("click", generateOrganism);
 document.getElementById("mutateButton").addEventListener("click", mutateOrganism);

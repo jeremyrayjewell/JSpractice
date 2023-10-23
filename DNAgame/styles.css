@@ -49,7 +49,7 @@ body::before {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 .game .logo {
@@ -104,35 +104,38 @@ body::before {
 .buttons {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 button {
-    background-color: #4CAF50; /* Button background color */
+    background-color: #4CAF50; 
     border: none;
     color: antiquewhite;
-    padding: 5px 24px;
+    padding: 2px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Drop shadow */
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
     font-size: smaller;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.9);
     margin-left: 50px;
-    margin-right: 50px
+    margin-right: 50px;
+    margin: 5px; 
+    flex: 1;
 }
 
-#generateButton, #mutateButton {
+#generateButton, #mutateButton, #playButton, #feedButton {
     font-family: 'Freckle Face', sans-serif; 
     font-weight: lighter;
+    font-size: 20px;
 }
 
 button:hover {
-    background-color: #45a049; /* Change the background color on hover */
-    transform: scale(1.05); /* Slight scale-up on hover */
+    background-color: #45a049; 
+    transform: scale(1.05); 
 }
 
 @keyframes bounce {
@@ -140,7 +143,7 @@ button:hover {
         transform: translateY(0);
     }
     100% {
-        transform: translateY(-5px); /* Adjust the distance for desired bounce height */
+        transform: translateY(-5px); 
     }
 }
 
