@@ -1,0 +1,53 @@
+@font-face {
+    font-family: 'ShadowHand';
+    src: url('ShadowHand.otf') format('opentype'),
+         url('ShadowHand.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'ShadowHand', sans-serif;
+    background-color: #e0e0e0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+img{
+    max-width: 200px;
+}
+
+.score-container{
+    background-color: rgba(255, 165, 0, 0.5);
+}
+
+canvas {
+    border: none; 
+    margin: 10px;
+    border-radius: 8px;
+}
+
+button {
+    font-family: 'ShadowHand', sans-serif;
+    font-size: larger;
+    background-color: rgba(255, 165, 0, 0.5);
+    color: white;
+    border: none; 
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+    max-width: 100px;
+}
+
+button:hover {
+    background-color: #9969d0;
+}
