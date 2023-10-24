@@ -303,7 +303,7 @@ let drawSquares = () => {
 };
 
 let drawNextShape = () => {
-  nctx.fillStyle = "rgba(255, 165, 0, 0.1)";
+  nctx.fillStyle = "rgba(255, 165, 0, 0.05)";
   nctx.fillRect(0, 0, nextShapeCanvas.width, nextShapeCanvas.height);
   for (let i = 0; i < nextShape.template.length; i++) {
     for (let j = 0; j < nextShape.template.length; j++) {

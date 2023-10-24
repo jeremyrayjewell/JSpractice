@@ -19,18 +19,48 @@ body {
     background-position: center;
 }
 
-img{
+img {
     max-width: 200px;
+    animation: jigglyBreathing 4s ease infinite;
+    margin-right: 15px;
+  }
+  
+ @keyframes jigglyBreathing {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(-1px, -1px) scale(1.05);
+  }
+  50% {
+    transform: translate(1px, 1px) scale(1.05);
+  }
+  75% {
+    transform: translate(-1px, -1px) scale(1.05);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
 }
 
-.score-container{
-    background-color: rgba(255, 165, 0, 0.5);
+
+.next-piece-container{
+    animation: jigglyBreathing 4s ease infinite;
+    margin-right: 15px;
+}
+
+.score-container {
+    background-image: linear-gradient(to right, rgba(255, 165, 0, 0.5), rgba(255, 165, 0, 0));
+    animation: jigglyBreathing 4s ease infinite;
+    margin-right: 15px;
 }
 
 canvas {
     border: none; 
     margin: 10px;
     border-radius: 8px;
+    animation: jigglyBreathing 4s ease infinite;
+
 }
 
 button {
@@ -46,6 +76,8 @@ button {
     margin-top: 10px;
     transition: background-color 0.3s;
     max-width: 100px;
+    animation: jigglyBreathing 4s ease infinite;
+    margin-left: 15px;
 }
 
 button:hover {
