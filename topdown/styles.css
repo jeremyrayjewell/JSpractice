@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 :root {
     --pixel-size: 2px;
     --grid-cell: calc( var(--pixel-size) * 16);
@@ -53,7 +55,7 @@
  
  .map {
     image-rendering: pixelated;
-    background-image: url("https://assets.codepen.io/21542/CameraDemoMap.png");
+    background-image: url("testmap.png");
     background-size: 100%;
     width: calc(13 * var(--grid-cell));
     height: calc(10 * var(--grid-cell));
@@ -106,6 +108,16 @@
    }
  }
  
+ #changeBackground {
+    display: block;
+    position: absolute;
+    height: auto; 
+    width: auto;
+    border-color: lightgrey;
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: .5em; 
+}
+
  .dpad {
     position:absolute;
     right: calc(var(--pixel-size) * 2);
