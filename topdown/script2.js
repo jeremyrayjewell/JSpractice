@@ -9,12 +9,15 @@ $(document).ready(function(){
    var ctrlDown = false;
 
    $("#changeBackground").click(function(){
+      $("script[data-source='character-script']").remove();
        if (!toggle) {
            $(".character_spritesheet").css("background-image", "url('jer1.png')");
            $(this).text("Yulia");
+           $.getScript("jer1.js");
        } else {
            $(".character_spritesheet").css("background-image", "url('yul1.png')");
            $(this).text("Jeremy");
+           $.getScript("yul1.js");
        }
        toggle = !toggle;
    });
@@ -32,6 +35,7 @@ $(document).ready(function(){
        }
    });
 });
+
 
 
 //start in the middle of the map

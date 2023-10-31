@@ -55,8 +55,8 @@
  
  .map {
     image-rendering: pixelated;
-    background-image: url("room2.png");
-    background-size: 170%;
+    background-image: url("testmap.png");
+    background-size: 100%;
     width: calc(13 * var(--grid-cell));
     height: calc(10 * var(--grid-cell));
     position: relative;
