@@ -17,8 +17,8 @@ function makeCharacterJump() {
         var originalTop = parseInt(character.css("top"));
 
         // Calculate the jump height and duration
-        var jumpHeight = 20;
-        var jumpDuration = 500; // Adjust the duration as needed
+        var jumpHeight = 22;
+        var jumpDuration = 1100; // Adjust the duration as needed
 
         // Move the character up with an ease-in-out animation
         character.animate(
