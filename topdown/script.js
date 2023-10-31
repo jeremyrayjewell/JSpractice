@@ -1,6 +1,7 @@
 var character = document.querySelector(".character");
 var map = document.querySelector(".map");
 
+$.getScript("yul1.js");
 
 //Change char 
 
