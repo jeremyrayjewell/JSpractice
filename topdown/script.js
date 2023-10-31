@@ -6,6 +6,8 @@ var map = document.querySelector(".map");
 
 $(document).ready(function(){
    var toggle = false;
+   var ctrlDown = false;
+
    $("#changeBackground").click(function(){
        if (!toggle) {
            $(".character_spritesheet").css("background-image", "url('jer1.png')");
@@ -16,11 +18,19 @@ $(document).ready(function(){
        }
        toggle = !toggle;
    });
+
    $(document).keydown(function(e) {
-      if (e.which == 17) { // 17 is the key code for Ctrl
-          $("#changeBackground").click();
-      }
-  });
+       if (!ctrlDown && e.which == 17) { // 17 is the key code for Ctrl
+           $("#changeBackground").click();
+           ctrlDown = true;
+       }
+   });
+
+   $(document).keyup(function(e) {
+       if (e.which == 17) {
+           ctrlDown = false;
+       }
+   });
 });
 
 
