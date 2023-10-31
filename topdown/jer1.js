@@ -50,3 +50,25 @@ function characterIsOnGround() {
     // Check if the character's top position is equal to or greater than the ground level
     return characterTop >= groundLevel;
 }
+
+const directions = {
+    up: "up",
+    down: "down",
+    left: "left",
+    right: "right",
+ }
+ const keys = {
+    38: directions.up,
+    37: directions.left,
+    39: directions.right,
+    40: directions.down,
+ }
+ document.addEventListener("keydown", (e) => {
+     var dir = keys[e.which];
+     if (dir && held_directions.indexOf(dir) === -1) {
+         // Only allow movement if character is on the ground
+         if (characterIsOnGround()) {
+             held_directions.unshift(dir);
+         }
+     }
+ });
