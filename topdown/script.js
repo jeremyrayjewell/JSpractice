@@ -156,11 +156,18 @@ function makeCharacterJump() {
 }
 
 $(document).keydown(function(e) {
-    if (e.which == 32 && characterIsOnGround()) {
-        e.preventDefault(); // Prevent the default action
-        makeCharacterJump();
-    }
+   if (e.which == 32 && characterIsOnGround()) {
+       e.preventDefault(); // Prevent the default action
+       makeCharacterJump();
+   }
 });
+
+$('.jumpbutton').click(function() {
+   if (characterIsOnGround()) {
+       makeCharacterJump();
+   }
+});
+
 
 function characterIsOnGround() {
     var character = $(".character_spritesheet");
