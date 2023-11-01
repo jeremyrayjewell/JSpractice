@@ -15,11 +15,11 @@
        --pixel-size: 4px;
     }
  }
- /* @media( min-width: 1000px ) {
+@media( min-width: 1000px ) {
     :root {
        --pixel-size: 5px;
     }
- } */
+ }
  
  html, body {
     height: 100%;
@@ -229,3 +229,6 @@ jumpbutton.pressed .Arrow_outline-bottom { stroke:#17dfea; }
     right:calc(var(--pixel-size) * 2);
     width: calc(var(--pixel-size) * 75)
  }  
+
+
+
