@@ -4,6 +4,8 @@
  
  body {
     background: #96ffc1;
+    display: flex;
+    justify-content: space-around;
  }
 
  .Card {
@@ -36,5 +38,16 @@
     }
     to {
         transform: translate3d(0, -100%, 0);
+    }
+}
+
+@media screen and (max-width: 900px) {
+    body {
+        flex-direction: column;
+        align-items: center; /* Optional: Center the cards when stacked vertically */
+    }
+
+    .Card {
+        margin: 1em; /* Adjust the margin for stacked cards */
     }
 }
