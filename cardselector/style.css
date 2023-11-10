@@ -7,20 +7,23 @@
  }
 
  .Card {
-    width: calc(32px * var(--pixel-size));
+    width: calc(31px * var(--pixel-size));
     height: calc(43px * var(--pixel-size));
     overflow: hidden;
     position: relative;
     margin: 4em auto;
-    border-radius: 17px;
+    border-radius: 20px;
+    border-color: white;
+    border-style: solid;
+    border-width: 15px 8px;
+    box-shadow: 10px 5px 5px black;
  }
  
  .Card_spritesheet {
     animation: moveSpritesheet 2s steps(5) infinite;
     width: calc(410px * var(--pixel-size));
-    height: calc(214px * var(--pixel-size));
-    position: absolute;
-    
+    height: calc(219px * var(--pixel-size));
+    position: absolute;    
  }
 
  .pixelart {
