@@ -1,5 +1,5 @@
 :root {
-    --pixel-size: 8;
+    --pixel-size: 6;
  }
  
  body {
@@ -8,16 +8,17 @@
 
  .Card {
     width: calc(32px * var(--pixel-size));
-    height: calc(43.8px * var(--pixel-size));
+    height: calc(43px * var(--pixel-size));
     overflow: hidden;
     position: relative;
     margin: 4em auto;
-    border-radius: 10px;
+    border-radius: 17px;
  }
  
  .Card_spritesheet {
-    animation: moveSpritesheet 1s steps(5) infinite;
-    width: calc(428px * var(--pixel-size));
+    animation: moveSpritesheet 2s steps(5) infinite;
+    width: calc(410px * var(--pixel-size));
+    height: calc(214px * var(--pixel-size));
     position: absolute;
     
  }
