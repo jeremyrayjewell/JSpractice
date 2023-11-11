@@ -6,14 +6,48 @@ document.addEventListener("DOMContentLoaded", function () {
     const deckChangeName = document.querySelector('.deck_change_button p');
     const deckStylePlayer = document.querySelectorAll('.Card_spritesheet_player');
     const deckStyleDealer = document.querySelectorAll('.Card_spritesheet_dealer');
+    const cardBackBorder = document.querySelectorAll('.Card');
+
 //Deck Styles
     const deckStyles = [
-        { src: 'cards.png', name: 'French deck' },
-        { src: 'spanishcards.png', name: 'Spanish deck' },
-        { src: 'germancards.png', name: 'German deck' }
+        { src: 'cards.png', name: 'French deck', border: 'white' },
+        { src: 'spanishcards.png', name: 'Spanish deck', border: 'white' },
+        { src: 'germancards.png', name: 'German deck', border: '#ebb929' }
     ];
 
     let currentDeckStyleIndex = 0;
+
+// Back border color
+
+    function setBorderColor() {
+     const currentDeckStyle = deckChangeName.textContent;
+        const currentStyle = deckStyles.find(style => style.name === currentDeckStyle);
+
+        const borderColor = isFlipped ? currentStyle.border : 'white';
+
+        cardBackBorder.forEach(card => {
+            card.style.borderColor = borderColor;
+        });
+    }
+
+//Change decks
+    function changeDeck() {
+        deckStylePlayer.forEach(player => {
+            player.src = deckStyles[currentDeckStyleIndex].src;
+        });
+
+        deckStyleDealer.forEach(dealer => {
+           dealer.src = deckStyles[currentDeckStyleIndex].src;
+        });
+
+        deckChangeName.textContent = deckStyles[currentDeckStyleIndex].name;
+        setBorderColor();
+    }
+
+    deckChange.addEventListener('click', function () {
+        changeDeck();
+    
+    });
 
     deckChange.addEventListener('click', function () {
         deckStylePlayer.forEach(function (player) {
@@ -23,13 +57,18 @@ document.addEventListener("DOMContentLoaded", function () {
         deckStyleDealer.forEach(function (dealer) {
             dealer.src = deckStyles[currentDeckStyleIndex].src;
         });
-    
+        
         deckChangeName.textContent = deckStyles[currentDeckStyleIndex].name;
         currentDeckStyleIndex = (currentDeckStyleIndex + 1) % deckStyles.length;
         playerCardDisplay.style.transform = originalTransformPlayer;
-            dealerCardDisplay.style.transform = originalTransformDealer; 
-            resultsElement.innerHTML = `Draw a card!`
+        dealerCardDisplay.style.transform = originalTransformDealer;
+        let isFlipped = false;
+        setBorderColor()
+ 
+        resultsElement.innerHTML = `Draw a card!`
+        
     });
+
     
 //Card Values    
 
@@ -92,18 +131,21 @@ document.addEventListener("DOMContentLoaded", function () {
         { id: "thirteenDiamonds", transform: "translate3d(-92.4%, -80%, 0)", numericalValue: 13 },
     ];
 
-    let isFlipped = false;
+    let isFlipped = true;
     let originalTransformPlayer = playerCardDisplay.style.transform;
     let originalTransformDealer = dealerCardDisplay.style.transform;
     
+    
     playerCardDisplay.addEventListener('click', function () {
-        //12-card filter for Spanish deck
+        //filter for deck type
+        setBorderColor()
         const currentDeckStyle = deckChangeName.textContent;
         const filteredCardValues = cardValues.filter(card => {
             return !(currentDeckStyle === 'Spanish deck' && card.numericalValue === 13) &&
                    !(currentDeckStyle === 'German deck' && (card.numericalValue === 6 || card.numericalValue === 5 || card.numericalValue === 4 || card.numericalValue === 3 || card.numericalValue === 2));
         });
-    
+
+     
         const playerRandomIndex = Math.floor(Math.random() * filteredCardValues.length);
         const selectedPlayerCard = filteredCardValues[playerRandomIndex];
     
@@ -127,4 +169,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
         isFlipped = !isFlipped;
     });
+    setBorderColor();
 });
