@@ -1,21 +1,94 @@
-// document.addEventListener("DOMContentLoaded", function() {
-//     const cardContainer = document.getElementById("cardContainer");
-//     const card = document.getElementById("card");
-//     const cardBack = document.getElementById("cardBack");
-//     const cardSpritesheet = document.getElementById("cardSpritesheet");
+document.addEventListener("DOMContentLoaded", function () {
+    const playerCardDisplay = document.querySelector('.Card_spritesheet_player');
+    const dealerCardDisplay = document.querySelector('.Card_spritesheet_dealer');
+    const resultsElement = document.querySelector('.results p');
 
-//     cardContainer.addEventListener("click", function() {
-//         if (cardBack.style.display === "none") {
-//             // Card is showing the front side
-//             cardBack.style.display = "block";
-//             cardSpritesheet.style.display = "none";
-//         } else {
-//             // Card is showing the back side
-//             cardBack.style.display = "none";
-//             cardSpritesheet.style.display = "block";
 
-//             // Change the background position to show a different part of the spritesheet
-//             cardSpritesheet.style.backgroundPosition = "0 0"; // Adjust this according to your spritesheet layout
-//         }
-//     });
-// });
+
+    const cardValues = [
+        //Spades
+        { id: "oneSpades", transform: "translate3d(0, -20%, 0)", numericalValue: 1 },
+        { id: "twoSpades", transform: "translate3d(-7.7%, -20%, 0)", numericalValue: 2 },
+        { id: "threeSpades", transform: "translate3d(-15.4%, -20%, 0)", numericalValue: 3 },
+        { id: "fourSpades", transform: "translate3d(-23.1%, -20%, 0)", numericalValue: 4 },
+        { id: "fiveSpades", transform: "translate3d(-30.8%, -20%, 0)", numericalValue: 5 },
+        { id: "sixSpades", transform: "translate3d(-38.5%, -20%, 0)", numericalValue: 6 },
+        { id: "sevenSpades", transform: "translate3d(-46.2%, -20%, 0)", numericalValue: 7 },
+        { id: "eightSpades", transform: "translate3d(-53.9%, -20%, 0)", numericalValue: 8 },
+        { id: "nineSpades", transform: "translate3d(-61.6%, -20%, 0)", numericalValue: 9 },
+        { id: "tenSpades", transform: "translate3d(-69.3%, -20%, 0)", numericalValue: 10 },
+        { id: "elevenSpades", transform: "translate3d(-77%, -20%, 0)", numericalValue: 11 },
+        { id: "twelveSpades", transform: "translate3d(-84.7%, -20%, 0)", numericalValue: 12 },
+        { id: "thirteenSpades", transform: "translate3d(-92.4%, -20%, 0)", numericalValue: 13 },
+        //Clubs
+        { id: "oneClubs", transform: "translate3d(0, -40%, 0)", numericalValue: 1 },
+        { id: "twoClubs", transform: "translate3d(-7.7%, -40%, 0)", numericalValue: 2 },
+        { id: "threeClubs", transform: "translate3d(-15.4%, -40%, 0)", numericalValue: 3 },
+        { id: "fourClubs", transform: "translate3d(-23.1%, -40%, 0)", numericalValue: 4 },
+        { id: "fiveClubs", transform: "translate3d(-30.8%, -40%, 0)", numericalValue: 5 },
+        { id: "sixClubs", transform: "translate3d(-38.5%, -40%, 0)", numericalValue: 6 },
+        { id: "sevenClubs", transform: "translate3d(-46.2%, -40%, 0)", numericalValue: 7 },
+        { id: "eightClubs", transform: "translate3d(-53.9%, -40%, 0)", numericalValue: 8 },
+        { id: "nineClubs", transform: "translate3d(-61.6%, -40%, 0)", numericalValue: 9 },
+        { id: "tenClubs", transform: "translate3d(-69.3%, -40%, 0)", numericalValue: 10 },
+        { id: "elevenClubs", transform: "translate3d(-77%, -40%, 0)", numericalValue: 11 },
+        { id: "twelveClubs", transform: "translate3d(-84.7%, -40%, 0)", numericalValue: 12 },
+        { id: "thirteenClubs", transform: "translate3d(-92.4%, -40%, 0)", numericalValue: 13 },
+        //Hearts
+        { id: "oneHearts", transform: "translate3d(0, -60%, 0)", numericalValue: 1 },
+        { id: "twoHearts", transform: "translate3d(-7.7%, -60%, 0)", numericalValue: 2 },
+        { id: "threeHearts", transform: "translate3d(-15.4%, -60%, 0)", numericalValue: 3 },
+        { id: "fourHearts", transform: "translate3d(-23.1%, -60%, 0)", numericalValue: 4 },
+        { id: "fiveHearts", transform: "translate3d(-30.8%, -60%, 0)", numericalValue: 5 },
+        { id: "sixHearts", transform: "translate3d(-38.5%, -60%, 0)", numericalValue: 6 },
+        { id: "sevenHearts", transform: "translate3d(-46.2%, -60%, 0)", numericalValue: 7 },
+        { id: "eightHearts", transform: "translate3d(-53.9%, -60%, 0)", numericalValue: 8 },
+        { id: "nineHearts", transform: "translate3d(-61.6%, -60%, 0)", numericalValue: 9 },
+        { id: "tenHearts", transform: "translate3d(-69.3%, -60%, 0)", numericalValue: 10 },
+        { id: "elevenHearts", transform: "translate3d(-77%, -60%, 0)", numericalValue: 11 },
+        { id: "twelveHeartss", transform: "translate3d(-84.7%, -60%, 0)", numericalValue: 12 },
+        { id: "thirteenHearts", transform: "translate3d(-92.4%, -60%, 0)", numericalValue: 13 },
+        //Diamonds
+        { id: "oneDiamonds", transform: "translate3d(0, -80%, 0)", numericalValue: 1 },
+        { id: "twoDiamonds", transform: "translate3d(-7.7%, -80%, 0)", numericalValue: 2 },
+        { id: "threeDiamonds", transform: "translate3d(-15.4%, -80%, 0)", numericalValue: 3 },
+        { id: "fourDiamonds", transform: "translate3d(-23.1%, -80%, 0)", numericalValue: 4 },
+        { id: "fiveDiamonds", transform: "translate3d(-30.8%, -80%, 0)", numericalValue: 5 },
+        { id: "sixDiamonds", transform: "translate3d(-38.5%, -80%, 0)", numericalValue: 6 },
+        { id: "sevenDiamonds", transform: "translate3d(-46.2%, -80%, 0)", numericalValue: 7 },
+        { id: "eightDiamonds", transform: "translate3d(-53.9%, -80%, 0)", numericalValue: 8 },
+        { id: "nineDiamonds", transform: "translate3d(-61.6%, -80%, 0)", numericalValue: 9 },
+        { id: "tenDiamonds", transform: "translate3d(-69.3%, -80%, 0)", numericalValue: 10 },
+        { id: "elevenDiamonds", transform: "translate3d(-77%, -80%, 0)", numericalValue: 11 },
+        { id: "twelveDiamonds", transform: "translate3d(-84.7%, -80%, 0)", numericalValue: 12 },
+        { id: "thirteenDiamonds", transform: "translate3d(-92.4%, -80%, 0)", numericalValue: 13 },
+    ];
+
+    let isFlipped = false;
+    let originalTransformPlayer = playerCardDisplay.style.transform;
+    let originalTransformDealer = dealerCardDisplay.style.transform;
+    
+    playerCardDisplay.addEventListener('click', function () {
+        const playerRandomIndex = Math.floor(Math.random() * cardValues.length);
+        const selectedPlayerCard = cardValues[playerRandomIndex];
+
+        let dealerCardValues = cardValues.filter(card => card !== selectedPlayerCard);
+        const dealerRandomIndex = Math.floor(Math.random() * dealerCardValues.length);
+        let selectedDealerCard = dealerCardValues[dealerRandomIndex]; 
+
+        if (isFlipped) {
+            playerCardDisplay.style.transform = originalTransformPlayer;
+            dealerCardDisplay.style.transform = originalTransformDealer; 
+        } else {
+            playerCardDisplay.style.transform = selectedPlayerCard.transform;
+            dealerCardDisplay.style.transform = selectedDealerCard.transform;
+            if (selectedPlayerCard.numericalValue > selectedDealerCard.numericalValue) {
+                resultsElement.innerHTML = `You: ${selectedPlayerCard.numericalValue} <br> Dealer: ${selectedDealerCard.numericalValue} <br><br> <span> You win! </span>`;
+            } else {
+                resultsElement.innerHTML = `You: ${selectedPlayerCard.numericalValue} <br> Dealer: ${selectedDealerCard.numericalValue} <br><br> <span> You lose! </span>`; 
+            }
+        }
+
+        isFlipped = !isFlipped;
+    });
+});

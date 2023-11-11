@@ -7,31 +7,20 @@
     <title>Card Flip</title>
 </head>
 <body>
-    <div class="Card">
-           
-        <img class="Card_spritesheet pixelart face-down" src="cards.png" alt="Card" />
-        
-        
-     </div>
-     <div class="Card">
-           
-        <img class="Card_spritesheet pixelart face-down" src="cards.png" alt="Card" />
-        
-        
-     </div>
-     <div class="Card">
-           
-        <img class="Card_spritesheet pixelart face-down" src="cards.png" alt="Card" />
-        
-        
-     </div>
-     <div class="Card">
-           
-        <img class="Card_spritesheet pixelart face-down" src="cards.png" alt="Card" />
-        
-        
-     </div>
+   <div class="card-container">
+      <p>Your card:</p>
+      <div class="Card">
+         <img class="Card_spritesheet_player pixelart face-down" src="cards.png" alt="Card" />
+      </div>
+   </div>
+   <div class="card-container">
+      <p>Dealer's card:</p>
+      <div class="Card">
+         <img class="Card_spritesheet_dealer pixelart" src="cards.png" alt="Card" />
+      </div>
+   </div>
+   <div class="results"><h2>Results</h2><p>Draw a card!</p></div>
 
-    <script src="script.js"></script>
+   <script src="script.js"></script>
 </body>
 </html>

@@ -8,6 +8,16 @@
     justify-content: space-around;
  }
 
+ .card-container {
+    position: relative;
+    border-style: dotted;
+    width: 250px;
+}
+
+.card-container p {
+    margin: 15px;
+}
+
  .Card {
     width: calc(31px * var(--pixel-size));
     height: calc(43px * var(--pixel-size));
@@ -21,16 +31,25 @@
     box-shadow: 10px 5px 5px black;
  }
  
- .Card_spritesheet {
-    animation: moveSpritesheet 2s steps(5) infinite;
+ .Card_spritesheet_player, .Card_spritesheet_dealer {
     width: calc(410px * var(--pixel-size));
     height: calc(219px * var(--pixel-size));
     position: absolute;    
+    transform: translate3d(0, 0%, 0);
  }
 
  .pixelart {
     image-rendering: pixelated;
  }
+
+.results {
+    text-align: center;
+}
+
+.results span{
+    font-weight: bolder;
+    font-size: larger;
+}
 
  @keyframes moveSpritesheet {
     from {
