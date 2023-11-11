@@ -79,6 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (isFlipped) {
             playerCardDisplay.style.transform = originalTransformPlayer;
             dealerCardDisplay.style.transform = originalTransformDealer; 
+            resultsElement.innerHTML = `Draw a card!`
         } else {
             playerCardDisplay.style.transform = selectedPlayerCard.transform;
             dealerCardDisplay.style.transform = selectedDealerCard.transform;
