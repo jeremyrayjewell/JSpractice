@@ -2,8 +2,35 @@ document.addEventListener("DOMContentLoaded", function () {
     const playerCardDisplay = document.querySelector('.Card_spritesheet_player');
     const dealerCardDisplay = document.querySelector('.Card_spritesheet_dealer');
     const resultsElement = document.querySelector('.results p');
+    const deckChange = document.querySelector('.deck_change_button');
+    const deckChangeName = document.querySelector('.deck_change_button p');
+    const deckStylePlayer = document.querySelectorAll('.Card_spritesheet_player');
+    const deckStyleDealer = document.querySelectorAll('.Card_spritesheet_dealer');
+//Deck Styles
+    const deckStyles = [
+        { src: 'cards.png', name: 'French deck' },
+        { src: 'spanishcards.png', name: 'Spanish deck' },
+    ];
 
+    let currentDeckStyleIndex = 0;
 
+    deckChange.addEventListener('click', function () {
+        deckStylePlayer.forEach(function (player) {
+            player.src = deckStyles[currentDeckStyleIndex].src;
+        });
+    
+        deckStyleDealer.forEach(function (dealer) {
+            dealer.src = deckStyles[currentDeckStyleIndex].src;
+        });
+    
+        deckChangeName.textContent = deckStyles[currentDeckStyleIndex].name;
+        currentDeckStyleIndex = (currentDeckStyleIndex + 1) % deckStyles.length;
+        playerCardDisplay.style.transform = originalTransformPlayer;
+            dealerCardDisplay.style.transform = originalTransformDealer; 
+            resultsElement.innerHTML = `Draw a card!`
+    });
+    
+//Card Values    
 
     const cardValues = [
         //Spades
@@ -69,12 +96,18 @@ document.addEventListener("DOMContentLoaded", function () {
     let originalTransformDealer = dealerCardDisplay.style.transform;
     
     playerCardDisplay.addEventListener('click', function () {
-        const playerRandomIndex = Math.floor(Math.random() * cardValues.length);
-        const selectedPlayerCard = cardValues[playerRandomIndex];
-
-        let dealerCardValues = cardValues.filter(card => card !== selectedPlayerCard);
+        //12-card filter for Spanish deck
+        const currentDeckStyle = deckChangeName.textContent;
+        const filteredCardValues = cardValues.filter(card => {
+            return !(currentDeckStyle === 'Spanish deck' && card.numericalValue === 13);
+        });
+    
+        const playerRandomIndex = Math.floor(Math.random() * filteredCardValues.length);
+        const selectedPlayerCard = filteredCardValues[playerRandomIndex];
+    
+        let dealerCardValues = filteredCardValues.filter(card => card !== selectedPlayerCard);
         const dealerRandomIndex = Math.floor(Math.random() * dealerCardValues.length);
-        let selectedDealerCard = dealerCardValues[dealerRandomIndex]; 
+        let selectedDealerCard = dealerCardValues[dealerRandomIndex];
 
         if (isFlipped) {
             playerCardDisplay.style.transform = originalTransformPlayer;
