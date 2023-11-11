@@ -70,8 +70,19 @@ document.addEventListener("DOMContentLoaded", function () {
         
     });
 
+    //Card Animation
+
+    function applyFlipAnimation(element) {
+        element.style.transition = 'transform 0.6s ease-in-out';
+        element.style.transform = 'rotateY(180deg)';
+        setTimeout(() => {
+            element.style.transform = 'rotateY(0deg)';
+        }, 600); // Adjust the delay based on your animation duration
+    }
+
+    let shouldApplyFlipAnimation = true;
     
-//Card Values    
+    //Card Values    
 
     const cardValues = [
         //Spades
@@ -135,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let isFlipped = true;
     let originalTransformPlayer = playerCardDisplay.style.transform;
     let originalTransformDealer = dealerCardDisplay.style.transform;
-    
+
     
     playerCardDisplay.addEventListener('click', function () {
         //filter for deck type

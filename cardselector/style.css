@@ -8,13 +8,13 @@
     justify-content: space-around;
  }
 
- .card-container {
+ .card-container-player, .card-container-dealer {
     position: relative;
     border-style: dotted;
     width: 250px;
 }
 
-.card-container p {
+.card-container-player p, .card-container-dealer p {
     margin: 15px;
 }
 
@@ -27,8 +27,8 @@
     border-radius: 20px;
     border-style: solid;
     border-width: 15px 8px;
-    box-shadow: 10px 5px 5px black;
- }
+    box-shadow: 10px 5px 5px black; 
+}
 
 .Card_spritesheet_player {
     cursor: pointer;
@@ -82,14 +82,7 @@
     font-size: larger;
 }
 
- @keyframes moveSpritesheet {
-    from {
-        transform: translate3d(0, 0, 0);
-    }
-    to {
-        transform: translate3d(0, -100%, 0);
-    }
-}
+
 
 @media screen and (max-width: 900px) {
     body {
