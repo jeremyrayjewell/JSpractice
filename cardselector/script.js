@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const deckStyles = [
         { src: 'cards.png', name: 'French deck' },
         { src: 'spanishcards.png', name: 'Spanish deck' },
+        { src: 'germancards.png', name: 'German deck' }
     ];
 
     let currentDeckStyleIndex = 0;
@@ -99,7 +100,8 @@ document.addEventListener("DOMContentLoaded", function () {
         //12-card filter for Spanish deck
         const currentDeckStyle = deckChangeName.textContent;
         const filteredCardValues = cardValues.filter(card => {
-            return !(currentDeckStyle === 'Spanish deck' && card.numericalValue === 13);
+            return !(currentDeckStyle === 'Spanish deck' && card.numericalValue === 13) &&
+                   !(currentDeckStyle === 'German deck' && (card.numericalValue === 6 || card.numericalValue === 5 || card.numericalValue === 4 || card.numericalValue === 3 || card.numericalValue === 2));
         });
     
         const playerRandomIndex = Math.floor(Math.random() * filteredCardValues.length);
