@@ -50,6 +50,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     deckChange.addEventListener('click', function () {
+        let isFlipped = false;
+        setBorderColor()
         deckStylePlayer.forEach(function (player) {
             player.src = deckStyles[currentDeckStyleIndex].src;
         });
@@ -62,8 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
         currentDeckStyleIndex = (currentDeckStyleIndex + 1) % deckStyles.length;
         playerCardDisplay.style.transform = originalTransformPlayer;
         dealerCardDisplay.style.transform = originalTransformDealer;
-        let isFlipped = false;
-        setBorderColor()
+
  
         resultsElement.innerHTML = `Draw a card!`
         
