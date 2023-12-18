@@ -1,24 +1,35 @@
 var character = document.querySelector(".character");
 var map = document.querySelector(".map");
 
+
 //Change char 
 
 $(document).ready(function(){
    var toggle = false;
    var ctrlDown = false;
 
-   $("#changeBackground").click(function(){
-      $("script[data-source='character-script']").remove();
-       if (!toggle) {
-           $(".character_spritesheet").css("background-image", "url('jer1.png')");
-           $(this).text("Yulia");
-       } else {
-           $(".character_spritesheet").css("background-image", "url('yul1.png')");
-           $(this).text("Jeremy");
-           
-       }
-       toggle = !toggle;
-   });
+var characters = {
+    'J': {
+        'image': 'jer1.png',
+        'speed': 1.4
+    },
+    'Y': {
+        'image': 'yul1.png',
+        'speed': 1
+    }
+};
+
+var currentCharacter = 'J';
+
+$("#changeBackground").click(function(){
+    $("script[data-source='character-script']").remove();
+    $(".character_spritesheet").css("background-image", "url('" + characters[currentCharacter].image + "')");
+    speed = characters[currentCharacter].speed;
+
+    // Toggle character
+    currentCharacter = (currentCharacter === 'J') ? 'Y' : 'J';
+    $(this).text(currentCharacter);
+});
 
    $(document).keydown(function(e) {
        if (!ctrlDown && e.which == 17) { // 17 is the key code for Ctrl
