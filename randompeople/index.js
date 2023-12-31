@@ -8,10 +8,11 @@ function getRandomColor() {
 }
 
 document.documentElement.style.setProperty('--main-color', getRandomColor());
+document.documentElement.style.setProperty('--secondary-color', getRandomColor());
 
 var img = document.createElement('img');
 var face = Math.floor(Math.random() * 10000);
-img.src = 'https://robohash.org/' + face + '?set=set5';
+img.src = 'https://robohash.org/' + face + '?set=set1';
 
 var faceDiv = document.querySelector('.face'); // select the div with class 'face'
 faceDiv.appendChild(img); 
