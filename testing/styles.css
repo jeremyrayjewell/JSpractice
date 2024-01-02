@@ -1,0 +1,35 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.event-card {
+    display: grid; /* Add this line to enable grid layout */
+    grid-template-columns: repeat(3, 1fr); /* Define the number of columns and their width */
+    grid-gap: 20px; /* Add some spacing between grid items */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    min-height: 100px;
+}
+
+code {
+    background: #f4f4f4;
+    padding: 5px;
+}
