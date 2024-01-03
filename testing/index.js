@@ -1,3 +1,5 @@
+const body = document.querySelector('body');
+
 const click = document.querySelector('#click');
 const clickBox = document.querySelector('#clickBox');
 
@@ -22,7 +24,16 @@ const mouseoutBox = document.querySelector('#mouseoutBox');
 const contextmenu = document.querySelector('#contextmenu');
 const contextmenuBox = document.querySelector('#contextmenuBox');
 
+const wheelBox = document.querySelector('#wheelBox');
 
+const keypressBox = document.querySelector('#keypressBox');
+
+const keydownBox = document.querySelector('#keydownBox');
+
+const keyupBox = document.querySelector('#keyupBox');
+
+
+//Mouse Events
 
 click.addEventListener('click', () => {
   clickBox.innerHTML = 'clicked';
@@ -77,5 +88,35 @@ contextmenu.addEventListener('contextmenu', () => {
   contextmenuBox.innerHTML = 'context menu';
   setTimeout(() => {
     contextmenuBox.innerHTML = '';
+  }, 500);      
+});
+
+body.addEventListener('wheel', () => {
+  wheelBox.innerHTML = 'wheel';
+  setTimeout(() => {
+    wheelBox.innerHTML = '';
+  }, 500);      
+});
+
+// Key Events
+
+body.addEventListener('keypress', (e) => {
+  keypressBox.innerHTML = `Key: ${e.key}`;
+  setTimeout(() => {
+    keypressBox.innerHTML = '';
+  }, 500);      
+});
+
+body.addEventListener('keydown', (e) => {
+  keydownBox.innerHTML = `Key: ${e.key}`;
+  setTimeout(() => {
+    keydownBox.innerHTML = '';
+  }, 500);      
+});
+
+body.addEventListener('keyup', (e) => {
+  keyupBox.innerHTML = `Key: ${e.key}`;
+  setTimeout(() => {
+    keyupBox.innerHTML = '';
   }, 500);      
 });

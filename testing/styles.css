@@ -14,15 +14,18 @@ body {
 }
 
 .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    padding: 0 20px;
     max-width: 960px;
     margin: 0 auto;
-    padding: 0 20px;
 }
 
 .event-card {
-    display: grid; /* Add this line to enable grid layout */
-    grid-template-columns: repeat(3, 1fr); /* Define the number of columns and their width */
-    grid-gap: 20px; /* Add some spacing between grid items */
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px; 
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
