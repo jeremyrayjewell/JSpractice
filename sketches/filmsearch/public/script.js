@@ -1,4 +1,4 @@
-const tmdbKey = '';
+const tmdbKey = 'd311f06e76ddb69f72c468ec6969b762';
 const tmdbBaseUrl = 'https://api.themoviedb.org/3';
 const playBtn = document.getElementById('playBtn');
 
@@ -34,6 +34,7 @@ const getMovies = async () => {
 
     if (response.ok){
       const jsonResponse = await response.json();
+      // console.log(jsonResponse);
       const movies = jsonResponse.results;
       return movies;
     }
@@ -54,8 +55,9 @@ const getMovieInfo = async (movie) => {
 
     if (response.ok){
       const jsonResponse = await response.json();
-      const movieInfo = jsonResponse.results;
-      return movieInfo;
+      console.log(jsonResponse);
+      const movieInfo = jsonResponse;
+        return movieInfo;
     }
   } catch (error){
     console.log(error);
@@ -71,7 +73,7 @@ const showRandomMovie = async () => {
 
     const movies = await getMovies();
     const randomMovie = getRandomMovie(movies);
-    const info = getMovieInfo(randomMovie);
+    const info = await getMovieInfo(randomMovie);
     displayMovie(info); 
   };
 
